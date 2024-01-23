@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fef5f5;
+}
+
+.header {
+  background-color: #fef5f5;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding: 10px;
+  margin-top: -5px;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column.side-left {
+  width: 11%;
+  height: 867px;
+  color: white;
+  background-color: black;
+  box-shadow: 2px 2px 5px #888888;
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 5px;
+  border-radius: 5px;
+  float: left;
+}
+  
+.column.side-right {
+  display:flex;
+  flex-direction: column;
+  width: 16%;
+  padding: 10px;
+  margin-right: -32px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  float: right;
+}
+
+.column.side-right > button {
+  width: 90%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  box-shadow: 2px 2px 5px #888888;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.column.side-right > button:hover {
+  background-color: #ddd;
+  transform: scale(1.05) translateX(-5px);
+}
+.column.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+
+.image-container {
+  display: flex;
+  justify-content: space-between; /* Räume zwischen den Bildern */
+}
+
+.image-container img {
+  width: 30%;
+  height: 300px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+iframe {
+  width: 65%;
+  height: 300px;
+}
+
+@media screen and (max-width: 600px) {
+  .column.side-left, .column.middle, .column.side-right {
+    width: 100%;
+  }
+}

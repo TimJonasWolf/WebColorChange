@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Color Change</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header" id="header">
+        <h1>Web Color Change</h1>
+    </div>
+
+    <nav class="topnav" id="topnav">
+        <a href="#">&#9825</a>
+        <a href="#">&#9826</a>
+        <a href="#">&#9828</a>
+        <a href="#">&#9831</a>
+    </nav>
+
+    <div class="column side-left" id="side-left">
+        <h3>About</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div class="column side-right">
+        <button class="color-button-black" onclick="changeColor('black')">black</button>
+        <button class="color-button-green" onclick="changeColor('green')">green</button>
+        <button class="color-button-blue" onclick="changeColor('blue')">blue</button>
+        <button class="color-button-red" onclick="changeColor('red')">red</button>
+        <button class="color-button-orange" onclick="changeColor('orange')">orange</button>
+    </div>    
+
+    <div class="column middle">
+        <p><strong>Text 1:</strong> <br> Kleiner Text mit Titel</p>
+
+        <div class="image-container" id="image-container">
+            <img src="assets/Black/image1.jpg" alt="Bild1">
+            <img src="assets/Black/image2.jpg" alt="Bild1">
+            <img src="assets/Black/image3.jpg" alt="Bild1">
+
+
+        </div>
+
+        <p><strong>Text 2:</strong> <br> Weiterer kleiner Text mit Titel</p>
+
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function changeColor(color) {
+            // Ändere die Hintergrundfarbe der topnav
+            document.getElementById('topnav').style.backgroundColor = color;
+            
+            // Ändere die Hintergrundfarbe der column.side-left
+            document.getElementById('side-left').style.backgroundColor = color;
+
+            document.getElementById('header').style.color = color;
+
+
+            var imageContainer = document.getElementById("image-container");
+            var images = imageContainer.getElementsByTagName("img");
+
+            for (var i = 0; i < images.length; i++) {
+                var originalSrc = images[i].getAttribute("data-original-src") || images[i].src;
+                images[i].setAttribute("data-original-src", originalSrc);
+
+                var newSrc = originalSrc.replace("/Black/", "/" + color + "/");
+                images[i].src = newSrc;
+            }
+        }
+
+    </script>
+          
+</body>
+</html>
